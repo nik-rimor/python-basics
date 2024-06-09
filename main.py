@@ -1,3 +1,10 @@
 prompt = "Enter a todo: "
-user_text = input(prompt)
+
+todos = []
+
+while(True):
+    todo = input(prompt)
+    todos.append(todo.capitalize())
+    print(todos)
+    
 
