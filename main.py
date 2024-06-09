@@ -1,4 +1,4 @@
-prompt = "Type 'add', 'show', 'edit' or 'exit' : "
+prompt = "Type 'add', 'show', 'edit', 'complete' or 'exit' : "
 
 todos = []
 
@@ -10,8 +10,8 @@ while(True):
             todo = input("Enter a todo: ").strip()
             todos.append(todo.capitalize())
         case 'show':
-           for item in todos:
-               print(item)
+           for (index, item) in enumerate(todos):
+               print(f"{index+1}-{item}")
         case 'edit':
             number = int(input("Number of todo to edit: "))
             number -=1
@@ -19,6 +19,10 @@ while(True):
             print(exisitng_todo)
             new_todo = input("Enter the todo: ").strip()
             todos[number] = new_todo
+        case 'complete':
+            number = int(input("Number of todo to complete: "))
+            number -=1
+            todos.pop(number)
         case 'exit':
             break
 
